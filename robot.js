@@ -295,6 +295,13 @@ class Robot {
         //for (var i=0; i<5; i++){
         //    this.idleAnim[i][0].drawFrame(this.game.clockTick, this.game.ctx, 100, 100);
         //}
+
+        
+        //this.idleAnim[0][0].drawFrame(this.game.clockTick, this.game.ctx, 100, 100);
+        for (var i=0; i<5; i++){
+            this.idleAnim[i][0].drawFrame(this.game.clockTick, this.game.ctx, 100, 100);
+        }
+
         
         
         //unedited from mario
