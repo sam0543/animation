@@ -281,7 +281,7 @@ class Robot {
 
     draw(ctx) {
         
-        this.idleAnim[0][0].drawFrame(this.game.clockTick, this.game.ctx, 25, 25);
+        this.idleAnim.drawFrame(this.game.clockTick, this.game.ctx, 25, 25);
         
         //unedited from mario
         //this.idleAnim[0][0].drawFrame(this.game.clockTick, this.game.ctx, this.x, this.y + 300, 2);
