@@ -289,7 +289,7 @@ class Robot {
 
     draw(ctx) {
         
-        for (i=0; i<this.idleFrames; i++){
+        for (i=0; i<5; i++){
             this.idleAnim[x][0].drawFrame(this.game.clockTick, this.game.ctx, 25, 25);
         }
         
