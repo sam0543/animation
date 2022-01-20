@@ -9,6 +9,7 @@ class Robot {
       
         // idle animation
         this.idleAnim = [];
+        this.idleFrames = 5;
 
         this.idleAnim[0] = [];
         this.idleAnim[1] = [];
@@ -26,6 +27,7 @@ class Robot {
         
         //move
         this.moveAnim = [];
+        this.moveFrames = 10;
 
         this.moveAnim[0] = [];
         this.moveAnim[1] = [];
@@ -54,6 +56,7 @@ class Robot {
       
         //attack 1
         this.atk1Anim = [];
+        this.atk1Frames = 23;
 
         this.atk1Anim[0] = [];
         this.atk1Anim[1] = [];
@@ -107,6 +110,7 @@ class Robot {
         
         //attack 2
         this.atk2Anim = [];
+        this.atk2Frames = 19;
 
         this.atk2Anim[0] = [];
         this.atk2Anim[1] = [];
@@ -152,6 +156,7 @@ class Robot {
         
         //attack 3
         this.atk3Anim = [];
+        this.atk3Frames = 17;
 
         this.atk3Anim[0] = [];
         this.atk3Anim[1] = [];
@@ -194,6 +199,7 @@ class Robot {
         
         //death
         this.dieAnim = [];
+        this.dieFrames = 19;
 
         this.dieAnim[0] = [];
         this.dieAnim[1] = [];
@@ -239,6 +245,7 @@ class Robot {
         
         //damage
         this.dmgAnim = [];
+        this.dmgFrames = 1;
         
         this.dmgAnim[0] = [];
         
@@ -246,6 +253,7 @@ class Robot {
         
         //regen
         this.regenAnim = [];
+        this.regenFrames = 9;
 
         this.regenAnim[0] = [];
         this.regenAnim[1] = [];
@@ -281,7 +289,10 @@ class Robot {
 
     draw(ctx) {
         
-        this.idleAnim.drawFrame(this.game.clockTick, this.game.ctx, 25, 25);
+        for (i=0; i<this.idleFrames; i++){
+            this.idleAnim[x][0].drawFrame(this.game.clockTick, this.game.ctx, 25, 25);
+        }
+        
         
         //unedited from mario
         //this.idleAnim[0][0].drawFrame(this.game.clockTick, this.game.ctx, this.x, this.y + 300, 2);
