@@ -291,9 +291,9 @@ class Robot {
         
         
         this.idleAnim[0][0].drawFrame(this.game.clockTick, this.game.ctx, 100, 100);
-        for (i=0; i<5; i++){
-            this.idleAnim[x][0].drawFrame(this.game.clockTick, this.game.ctx, 25, 25);
-        }
+        //for (i=0; i<5; i++){
+        //    this.idleAnim[x][0].drawFrame(this.game.clockTick, this.game.ctx, 25, 25);
+        //}
         
         
         //unedited from mario
