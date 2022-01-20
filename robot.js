@@ -1,14 +1,7 @@
 class Robot {
     constructor(game, x, y, spritesheet) {
         Object.assign(this, { game, x, y });
-
-        // state variables
-        this.size = 0; // 0 = little, 1 = big, 2 = super, 3 = little invincible, 4 = big invincible, 5 = super invincible
-        this.facing = 0; // 0 = right, 1 = left
-        this.state = 0; // 0 = idle, 1 = move, 2 = attack1, 3 = attack2, 4 = attack3, 5 = death, 6 = hit, 7 = regen
-
-        this.velocity = 0;
-
+        
         this.loadAnimations(spritesheet);
     };
 
@@ -288,29 +281,13 @@ class Robot {
 
     draw(ctx) {
         
+        this.idleAnim[0][0].drawFrame(this.game.clockTick, this.game.ctx, 25, 25);
+        
         //unedited from mario
-        this.idleAnim[0][0].drawFrame(this.game.clockTick, this.game.ctx, this.x, this.y + 300, 2);
-        this.idleAnim[1][0].drawFrame(this.game.clockTick, this.game.ctx, this.x + 100, this.y + 300, 2);
-        this.idleAnim[2][0].drawFrame(this.game.clockTick, this.game.ctx, this.x + 200, this.y + 300, 2);
+        //this.idleAnim[0][0].drawFrame(this.game.clockTick, this.game.ctx, this.x, this.y + 300, 2);
+        //this.idleAnim[1][0].drawFrame(this.game.clockTick, this.game.ctx, this.x + 100, this.y + 300, 2);
+        //this.idleAnim[2][0].drawFrame(this.game.clockTick, this.game.ctx, this.x + 200, this.y + 300, 2);
 
-        this.idleAnim[0][1].drawFrame(this.game.clockTick, this.game.ctx, this.x, this.y + 450, 2);
-        this.idleAnim[1][1].drawFrame(this.game.clockTick, this.game.ctx, this.x + 100, this.y + 450, 2);
-        this.idleAnim[2][1].drawFrame(this.game.clockTick, this.game.ctx, this.x + 200, this.y + 450, 2);
-
-        this.walkAnim[0][0].drawFrame(this.game.clockTick, this.game.ctx, this.x, this.y, 2);
-        this.walkAnim[1][0].drawFrame(this.game.clockTick, this.game.ctx, this.x + 100, this.y, 2);
-        this.walkAnim[2][0].drawFrame(this.game.clockTick, this.game.ctx, this.x + 200, this.y, 2);
-
-        this.walkAnim[0][1].drawFrame(this.game.clockTick, this.game.ctx, this.x, this.y + 150, 2);
-        this.walkAnim[1][1].drawFrame(this.game.clockTick, this.game.ctx, this.x + 100, this.y + 150, 2);
-        this.walkAnim[2][1].drawFrame(this.game.clockTick, this.game.ctx, this.x + 200, this.y + 150, 2);
-
-        this.slideAnim[0][0].drawFrame(this.game.clockTick, this.game.ctx, this.x + 300, this.y, 2);
-        this.slideAnim[1][0].drawFrame(this.game.clockTick, this.game.ctx, this.x + 400, this.y, 2);
-        this.slideAnim[2][0].drawFrame(this.game.clockTick, this.game.ctx, this.x + 500, this.y, 2);
-
-        this.slideAnim[0][1].drawFrame(this.game.clockTick, this.game.ctx, this.x + 300, this.y + 150, 2);
-        this.slideAnim[1][1].drawFrame(this.game.clockTick, this.game.ctx, this.x + 400, this.y + 150, 2);
-        this.slideAnim[2][1].drawFrame(this.game.clockTick, this.game.ctx, this.x + 500, this.y + 150, 2);
+        
     };
 };
