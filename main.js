@@ -11,7 +11,7 @@ ASSET_MANAGER.downloadAll(function () {
 
 	gameEngine.init(ctx);
 
-	gameEngine.addEntity(new Robot(gameEngine, 50, 50, ASSET_MANAGER.getAsset("./00robotspritesheet.png")));
+	gameEngine.addEntity(new Robot(gameEngine, ASSET_MANAGER.getAsset("./00robotspritesheet.png")));
 
 	gameEngine.start();
 });
