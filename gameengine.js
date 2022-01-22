@@ -50,7 +50,7 @@ class GameEngine {
                     break;
                 case "ArrowDown":
                 case "KeyS":
-                    this.up = true;
+                    this.down = true;
                     break;
                 case "AltLeft":
                 case "AltRight":

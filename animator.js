@@ -27,10 +27,6 @@ class Animator {
             x, y,
             this.width, this.height);
 
-        if (PARAMS.DEBUG) {
-            ctx.strokeStyle = 'Green';
-            ctx.strokeRect(x, y, this.width * scale, this.height * scale);
-        }
     };
 
     currentFrame() {

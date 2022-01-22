@@ -2,7 +2,7 @@ var gameEngine = new GameEngine();
 
 var ASSET_MANAGER = new AssetManager();
 
-ASSET_MANAGER.queueDownload("./00robotspritesheet.png");
+ASSET_MANAGER.queueDownload("./idlemovecombospritesheet.png");
 
 
 ASSET_MANAGER.downloadAll(function () {
@@ -11,7 +11,7 @@ ASSET_MANAGER.downloadAll(function () {
 
 	gameEngine.init(ctx);
 
-	gameEngine.addEntity(new Robot(gameEngine, 0, 0, ASSET_MANAGER.getAsset("./00robotspritesheet.png")));
+	gameEngine.addEntity(new Robot(gameEngine, 0, 0, ASSET_MANAGER.getAsset("./idlemovecombospritesheet.png")));
 
 	gameEngine.start();
 });
