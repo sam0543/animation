@@ -23,14 +23,14 @@ class Robot {
     };
 
     update() {
-        this.x += 80 * this.game.clockTick;
-        if (this x > 1368) { this.x = 0;}
+        this.x += 5 * this.game.clockTick;
+        if (this.x > 1000) {this.x = 0;}
     };
 
     draw(ctx) {
                 
-        //this.idleAnim[0][0].drawFrame(this.game.clockTick, this.game.ctx, x+100, x+100, 1);
-        this.moveAnim[0][0].drawFrame(this.game.clockTick, this.game.ctx, x+100, x+300, 1);
+        //this.idleAnim[0][0].drawFrame(1, this.game.ctx, this.x, this.y);
+        this.moveAnim[0][0].drawFrame(1, this.game.ctx, this.x, this.y);
         
         
     };
