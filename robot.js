@@ -2,36 +2,46 @@ class Robot {
     constructor(game, x, y, spritesheet) {
         Object.assign(this, { game, x, y });
         
+        this.STOP = 0;
+        this.GO = 1;
+        
+        this.state = 1;
+        
         this.loadAnimations(spritesheet);
         
     };
 
     loadAnimations(spritesheet) {
-
-        this.idleAnim = [];
+        //idle = 0, move = 1
+        this.roboAnim = [];
         
-        this.idleAnim[0] = [];
+        this.roboAnim[0] = new Animator(spritesheet, 0.5, 0, 125, 164, 6, 10, 1, false, true);
         
-        this.idleAnim[0][0] = new Animator(spritesheet, 1, 1, 125, 164, 6, 10, 1, false, true);
-        
-        this.moveAnim = [];
-        
-        this.moveAnim[0] = [];
-        
-        this.moveAnim[0][0] = new Animator(spritesheet, 1, 167, 125, 166, 11, 10, 1, false, true);
+        this.roboAnim[1] = new Animator(spritesheet, 0.82, 167, 125, 166, 11, 10, 0, false, true);
         
     };
 
     update() {
+        this.speed = -1500;
+        const TICK = this.game.clockTick;
         this.x += 5 * this.game.clockTick;
-        if (this.x > 1000) {this.x = 0;}
-    };
-
-    draw(ctx) {
-                
-        //this.idleAnim[0][0].drawFrame(1, this.game.ctx, this.x, this.y);
-        this.moveAnim[0][0].drawFrame(1, this.game.ctx, this.x, this.y);
+        if (this.x == 1) {
+            this.x += 600;
+        }
         
+        //if (this.game.left) {
+        //    this.state = this.GO;
+        //    this.x += 5 * this.game.clockTick;
+        //} else {
+        //    this.state = this.STOP;
+        //}
+        
+    };
+        
+    draw(ctx) {
+        
+        
+        this.roboAnim[this.state].drawFrame(1, this.game.ctx, 600-this.x, this.y);
         
     };
 };
