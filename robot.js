@@ -22,11 +22,11 @@ class Robot {
     };
 
     update() {
-        this.speed = -1500;
+        this.speed = -15;
         const TICK = this.game.clockTick;
-        this.x += 5 * this.game.clockTick;
-        if (this.x == 1) {
-            this.x += 600;
+        this.x += this.speed * this.game.clockTick;
+        if (this.x <= -100) {
+            this.x += 900;
         }
         
         //if (this.game.left) {
@@ -41,7 +41,7 @@ class Robot {
     draw(ctx) {
         
         
-        this.roboAnim[this.state].drawFrame(1, this.game.ctx, 600-this.x, this.y);
+        this.roboAnim[this.state].drawFrame(1, this.game.ctx, this.x, this.y);
         
     };
 };
