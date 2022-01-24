@@ -25,7 +25,7 @@ class Robot {
         this.speed = -15;
         const TICK = this.game.clockTick;
         this.x += this.speed * this.game.clockTick;
-        if (this.x <= -100) {
+        if (this.x <= -130) {
             this.x += 900;
         }
         
